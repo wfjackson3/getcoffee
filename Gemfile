@@ -14,6 +14,10 @@ gem 'bootstrap-sass', '2.0.0'
 gem 'twitter_bootstrap_form_for'
 gem 'devise'
 
+group :production do
+  gem 'pg'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
