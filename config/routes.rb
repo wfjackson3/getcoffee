@@ -1,9 +1,9 @@
 Getcoffee::Application.routes.draw do
+  resources :event_tags
+
   resources :invite_statuses
 
   resources :event_statuses
-
-  resources :event_types
 
   resources :events
 

@@ -27,10 +27,10 @@
 		  </div>
 	  </div>
 	  <div class="field">
-	    <%= f.number_field :type %>
+	    <%= f.collection_select(:event_tag_id, :event_tag_id, EventTag.all, :id, :tag) %>
 	  </div>
 	  <div class="field">
-	    <%= f.number_field :status %>
+	    <%= f.collection_select(:event_status_id, :event_status_id, EventStatus.all, :id, :status) %>
 	  </div>
 	  <div class="actions">
 	    <%= f.submit %>

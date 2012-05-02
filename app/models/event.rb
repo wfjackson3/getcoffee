@@ -14,11 +14,11 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :address, :city, :date, :state, :event_status_id, :event_type_id
+  attr_accessible :address, :city, :date, :state, :event_status_id, :event_tag_id
   
   has_many :invites
   belongs_to :event_status
-  belongs_to :event_type
+  belongs_to :event_tag
   
   validates :address, :presence => true, :length => { :maximum => 100 }
   validates :city, :presence => true, :length => { :maximum => 25 }

@@ -19,8 +19,8 @@
     <td><%= event.address %></td>
     <td><%= event.city %></td>
     <td><%= event.state %></td>
-    <td><%= event.type %></td>
-    <td><%= event.status %></td>
+    <td><%= event.event_tag.tag %></td>
+    <td><%= event.event_status.status %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
