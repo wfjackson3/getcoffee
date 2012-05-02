@@ -55,5 +55,8 @@ module Getcoffee
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Devise told me to do this for Heroku deployment
+    config.assets.initialize_on_precompile = false
   end
 end
