@@ -5,8 +5,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :address
       t.string :city
       t.string :state
-      t.integer :type
-      t.integer :status
+      t.integer :event_type_id
+      t.integer :event_status_id
 
       t.timestamps
     end

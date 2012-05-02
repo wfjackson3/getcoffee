@@ -1,7 +1,7 @@
 class CreateInvites < ActiveRecord::Migration
   def change
     create_table :invites do |t|
-      t.integer :status
+      t.integer :invite_status_id
       t.integer :position_id
       t.integer :event_id
 
