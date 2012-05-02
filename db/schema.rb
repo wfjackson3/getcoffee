@@ -11,17 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502200420) do
+ActiveRecord::Schema.define(:version => 20120502214946) do
+
+  create_table "event_statuses", :force => true do |t|
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "event_types", :force => true do |t|
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.datetime "date"
     t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.integer  "type"
-    t.integer  "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "event_type_id"
+    t.integer  "event_status_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "friends", :force => true do |t|
@@ -31,12 +43,18 @@ ActiveRecord::Schema.define(:version => 20120502200420) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "invite_statuses", :force => true do |t|
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "invites", :force => true do |t|
-    t.integer  "status"
+    t.integer  "invite_status_id"
     t.integer  "position_id"
     t.integer  "event_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "positions", :force => true do |t|
