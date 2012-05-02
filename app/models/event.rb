@@ -19,4 +19,10 @@ class Event < ActiveRecord::Base
   has_many :invites
   belongs_to :event_status
   belongs_to :event_type
+  
+  validates :address, :presence => true, :length => { :maximum => 100 }
+  validates :city, :presence => true, :length => { :maximum => 25 }
+  validates :state, :presence => true, :length => { :maximum => 2 }
+  validates :date, :presence => true
+  validates :event_status_id, :presence => true
 end

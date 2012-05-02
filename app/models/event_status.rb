@@ -12,4 +12,6 @@ class EventStatus < ActiveRecord::Base
   attr_accessible :status
   
   has_many :events
+  
+  validates :status, :presence => true
 end

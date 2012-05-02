@@ -12,4 +12,6 @@ class EventType < ActiveRecord::Base
   attr_accessible :type
   
   has_many :events
+  
+  validates :type, :presence => true
 end

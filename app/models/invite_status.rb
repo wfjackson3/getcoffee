@@ -12,4 +12,6 @@ class InviteStatus < ActiveRecord::Base
   attr_accessible :status
   
   has_many :invites
+  
+  validates :status, :presence => true
 end
