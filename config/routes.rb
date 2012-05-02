@@ -8,10 +8,10 @@ Getcoffee::Application.routes.draw do
   resources :friends
 
   root :to => "pages#home"
+  
+  match 'about' => 'pages#about'
+  match 'contact' => 'pages#contact'
 
-  get "pages/contact"
-
-  get "pages/about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
