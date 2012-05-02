@@ -1,4 +1,12 @@
 Getcoffee::Application.routes.draw do
+  resources :events
+
+  resources :invites
+
+  resources :positions
+
+  resources :friends
+
   root :to => "pages#home"
 
   get "pages/contact"
