@@ -7,7 +7,7 @@ gem 'rails', '3.2.3'
 
 group :development do
   gem 'sqlite3'
-  gem 'annotate', '2.4.0'
+  gem 'annotate', '2.4.1.beta1'
 end
 
 gem 'bootstrap-sass', '2.0.0'
