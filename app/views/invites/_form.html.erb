@@ -10,19 +10,15 @@
       </ul>
     </div>
   <% end %>
-  
-  <% Position.all.each do |position| %>
-  	<%= position.friend.twitter_handle %>
-  <% end %>
 
   <div class="field">
-    <%= f.collection_select(:invite_status_id, :invite_status_id, InviteStatus.all, :id, :status) %>
+    <%= f.collection_select(:invite_status_id, "Status", InviteStatus.all, :id, :status) %>
   </div>
   <div class="field">
     <%= select("invite", "position_id", Position.includes(:friend).collect {|p| [ p.friend.twitter_handle, p.id ] }) %>
   </div>
   <div class="field">
-    <%= f.number_field :event_id %>
+    <%= f.collection_select(:event_id, "Event", Event.all, :id, :title) %>
   </div>
   <div class="actions">
     <%= f.submit %>
