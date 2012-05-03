@@ -14,7 +14,8 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
-
+    @json = @event.to_gmaps4rails
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
@@ -60,6 +61,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
+        @event.toggle(:gmaps).save
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else

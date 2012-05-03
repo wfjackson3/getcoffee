@@ -7,10 +7,13 @@
 #  address         :string(255)
 #  city            :string(255)
 #  state           :string(255)
-#  event_type_id   :integer
+#  event_tag_id    :integer
 #  event_status_id :integer
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
+#  latitude        :float
+#  longitude       :float
+#  gmaps           :boolean
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

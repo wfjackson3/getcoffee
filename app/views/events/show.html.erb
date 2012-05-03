@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= gmaps("map_options" => {"zoom" => 15, "auto_zoom" => false, "mapTypeControl" => false}, "markers" => { "data" => @json }) %>
 <p>
   <b>Date:</b>
   <%= @event.date %>

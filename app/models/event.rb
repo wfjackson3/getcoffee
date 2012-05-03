@@ -7,10 +7,13 @@
 #  address         :string(255)
 #  city            :string(255)
 #  state           :string(255)
-#  event_type_id   :integer
+#  event_tag_id    :integer
 #  event_status_id :integer
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
+#  latitude        :float
+#  longitude       :float
+#  gmaps           :boolean
 #
 
 class Event < ActiveRecord::Base
@@ -25,4 +28,10 @@ class Event < ActiveRecord::Base
   validates :state, :presence => true, :length => { :maximum => 2 }
   validates :date, :presence => true
   validates :event_status_id, :presence => true
+  
+  acts_as_gmappable
+  def gmaps4rails_address
+  #describe how to retrieve the address from your model, if you use directly a db column, you can dry your code, see wiki
+    "#{self.address}, #{self.city}, #{self.state}"
+  end
 end

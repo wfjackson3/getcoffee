@@ -13,6 +13,7 @@ end
 gem 'bootstrap-sass', '2.0.0'
 gem 'twitter_bootstrap_form_for'
 gem 'devise'
+gem 'gmaps4rails'
 
 group :production do
   gem 'pg'
