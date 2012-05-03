@@ -15,7 +15,7 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.date %></td>
+    <td><%= event.date.strftime("%A %B, %d") %> at <%= event.date.strftime("%l:%M %P") %></td>
     <td><%= event.address %></td>
     <td><%= event.city %></td>
     <td><%= event.state %></td>
