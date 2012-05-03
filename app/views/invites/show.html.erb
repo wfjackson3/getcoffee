@@ -2,17 +2,17 @@
 
 <p>
   <b>Status:</b>
-  <%= @invite.status %>
+  <%= @invite.invite_status.status %>
 </p>
 
 <p>
   <b>Position:</b>
-  <%= @invite.position_id %>
+  <%= @invite.position.friend.twitter_handle %>
 </p>
 
 <p>
   <b>Event:</b>
-  <%= @invite.event_id %>
+  <%= @invite.event.date %>
 </p>
 
 

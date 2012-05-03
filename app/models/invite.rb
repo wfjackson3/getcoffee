@@ -15,8 +15,9 @@ class Invite < ActiveRecord::Base
   
   belongs_to :event
   belongs_to :position
-  belongs_to :invite_statuses
+  belongs_to :invite_status
   
   validates :position_id, :presence => true
   validates :event_id, :presence => true
+  
 end

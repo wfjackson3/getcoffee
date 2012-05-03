@@ -13,6 +13,7 @@ class Friend < ActiveRecord::Base
   attr_accessible :twitter_handle, :user_id
   
   has_many :positions
+  has_many :invites, :through => :positions
   
   validates :user_id, :presence => true
   validates :twitter_handle, :presence => true, :uniqueness => {:scope => :user_id}
