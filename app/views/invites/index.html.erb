@@ -14,7 +14,7 @@
   <tr>
     <td><%= invite.invite_status.status %></td>
     <td><%= invite.position.friend.twitter_handle %></td>
-    <td><%= invite.event.event_tag.tag %> on <%= formatted_time(invite.event.date) %></td>
+    <td><%= invite.event.title %></td>
     <td><%= link_to 'Show', invite %></td>
     <td><%= link_to 'Edit', edit_invite_path(invite) %></td>
     <td><%= link_to 'Destroy', invite, confirm: 'Are you sure?', method: :delete %></td>

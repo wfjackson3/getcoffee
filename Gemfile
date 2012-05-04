@@ -14,6 +14,8 @@ gem 'bootstrap-sass', '2.0.0'
 gem 'twitter_bootstrap_form_for'
 gem 'devise'
 gem 'gmaps4rails'
+gem 'twitter'
+gem 'oauth'
 
 group :production do
   gem 'pg'

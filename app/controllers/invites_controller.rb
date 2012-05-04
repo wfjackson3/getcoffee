@@ -41,6 +41,8 @@ class InvitesController < ApplicationController
   # POST /invites.json
   def create
     @invite = Invite.new(params[:invite])
+    
+    # Send a tweet to the invitee
 
     respond_to do |format|
       if @invite.save
