@@ -1,3 +1,13 @@
+<div class="tabs-left">
+	<ul class="nav nav-tabs">
+		<li><%= link_to 'Events', events_path %></li>
+		<li><%= link_to 'Friends', friends_path %></li>
+		<li><%= link_to 'Invites', invites_path %></li>
+		<li><%= link_to 'Queue', positions_path %></li>
+	</ul>
+</div>
+<div class="tab-content">
+	<div class="span10">
 <h1>Listing events</h1>
 
 <table class="table">
@@ -31,3 +41,6 @@
 <br />
 
 <%= link_to 'New Event', new_event_path %>
+</div>
+</div>
+
