@@ -1,4 +1,4 @@
-<%= form_for(@invite_status) do |f| %>
+<%= twitter_bootstrap_form_for(@invite_status) do |f| %>
   <% if @invite_status.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@invite_status.errors.count, "error") %> prohibited this invite_status from being saved:</h2>
@@ -12,7 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :status %><br />
     <%= f.text_field :status %>
   </div>
   <div class="actions">

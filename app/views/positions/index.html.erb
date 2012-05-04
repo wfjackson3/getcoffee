@@ -1,6 +1,6 @@
 <%= render 'shared/leftnav' %>
 <div class="span10">
-	<h1>Listing positions</h1>
+	<h1>People I want to catch up with</h1>
 	
 	<table class="table">
 	  <tr>
@@ -13,7 +13,7 @@
 	
 	<% @positions.each do |position| %>
 	  <tr>
-	    <td><%= position.friend_id %></td>
+	    <td><%= position.friend.twitter_handle %></td>
 	    <td><%= position.archive %></td>
 	    <td><%= link_to 'Show', position %></td>
 	    <td><%= link_to 'Edit', edit_position_path(position) %></td>

@@ -1,4 +1,4 @@
-<%= form_for(@event_tag) do |f| %>
+<%= twitter_bootstrap_form_for(@event_tag) do |f| %>
   <% if @event_tag.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event_tag.errors.count, "error") %> prohibited this event_tag from being saved:</h2>
@@ -12,7 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :tag %><br />
     <%= f.text_field :tag %>
   </div>
   <div class="actions">

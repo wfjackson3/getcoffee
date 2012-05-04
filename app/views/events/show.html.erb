@@ -2,7 +2,7 @@
 <%= gmaps("map_options" => {"zoom" => 15, "auto_zoom" => false, "mapTypeControl" => false}, "markers" => { "data" => @json }) %>
 <p>
   <b>Date:</b>
-  <%= @event.date.strftime("%A %B, %d") %> at <%= event.date.strftime("%l:%M %P") %>
+  <%= @event.date.strftime("%A %B, %d") %> at <%= @event.date.strftime("%l:%M %P") %>
 </p>
 
 <p>
