@@ -6,13 +6,13 @@
   -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
   -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
   box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
-  width: 300px;
+  width: 280px;
   max-width: none;
 }
 
 .gmaps4rails_map {
-  width: 300px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
 }
 
 .gmaps4rails_map img { max-width: none; }

@@ -14,6 +14,7 @@ class InvitesController < ApplicationController
   # GET /invites/1.json
   def show
     @invite = Invite.find(params[:id])
+    @json = @invite.event.to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb
