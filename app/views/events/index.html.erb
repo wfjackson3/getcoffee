@@ -1,46 +1,36 @@
-<div class="tabs-left">
-	<ul class="nav nav-tabs">
-		<li><%= link_to 'Events', events_path %></li>
-		<li><%= link_to 'Friends', friends_path %></li>
-		<li><%= link_to 'Invites', invites_path %></li>
-		<li><%= link_to 'Queue', positions_path %></li>
-	</ul>
+<%= render 'shared/leftnav' %>
+
+<div class="span10">
+	<h1>Listing events</h1>
+	
+	<table class="table">
+	  <tr>
+	    <th>Date</th>
+	    <th>Address</th>
+	    <th>City</th>
+	    <th>State</th>
+	    <th>Type</th>
+	    <th>Status</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @events.each do |event| %>
+	  <tr>
+	    <td><%= formatted_time(event.date) %></td>
+	    <td><%= event.address %></td>
+	    <td><%= event.city %></td>
+	    <td><%= event.state %></td>
+	    <td><%= event.event_tag.tag %></td>
+	    <td><%= event.event_status.status %></td>
+	    <td><%= link_to 'Show', event %></td>
+	    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+	    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+	
+	<br />
+	<%= link_to 'New Event', new_event_path %>
 </div>
-<div class="tab-content">
-	<div class="span10">
-<h1>Listing events</h1>
-
-<table class="table">
-  <tr>
-    <th>Date</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Type</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @events.each do |event| %>
-  <tr>
-    <td><%= formatted_time(event.date) %></td>
-    <td><%= event.address %></td>
-    <td><%= event.city %></td>
-    <td><%= event.state %></td>
-    <td><%= event.event_tag.tag %></td>
-    <td><%= event.event_status.status %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Event', new_event_path %>
-</div>
-</div>
-

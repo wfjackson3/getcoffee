@@ -1,0 +1,8 @@
+<div class="tabs-left">
+	<ul class="nav nav-tabs">
+		<li<%= %q( class="active").html_safe if current_page?(events_path) %>><%= link_to 'Events', events_path %></li>
+		<li<%= %q( class="active").html_safe if current_page?(friends_path) %>><%= link_to 'Friends', friends_path %></li>
+		<li<%= %q( class="active").html_safe if current_page?(invites_path) %>><%= link_to 'Invites', invites_path %></li>
+		<li<%= %q( class="active").html_safe if current_page?(positions_path) %>><%= link_to 'Queue', positions_path %></li>
+	</ul>
+</div>
