@@ -1,10 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<div class="hero-unit">
-	<h1>Hey there <%= @invite.position.friend.twitter_handle %>!</h1>
-	<p>Willis has invited you out to <%= @invite.event.title %></p>
-</div>
-
 <div class="hero-unit">
 	<div class="row">
 		<div class="span10">
@@ -25,63 +19,3 @@
 		</div>
 	</div>
 </div>
-
-<div class="hero-unit">
-	<div class="row">
-		<div class="span10">
-			<h1>Hey there <%= @invite.position.friend.twitter_handle %>!</h1>
-			<div class="row">
-				<div class="span6">
-					<h3 class="well">Willis has invited you out to <%= @invite.event.title %></h3>
-					<h3>Will you be there?</h3>
-					<a href=# class="btn btn-success btn-large">Yes</a>
-					<a href=# class="btn btn-danger btn-large">No</a>
-				</div>
-				<div class="span4">
-					<%= gmaps("map_options" => {"zoom" => 15, "auto_zoom" => false, "mapTypeControl" => false}, "markers" => { "data" => @json }) %>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="row">
-	<div class="span12">
-		<h1>Hey there <%= @invite.position.friend.twitter_handle %>!</h1>
-		<div class="row">
-			<div class="span4">
-				<h3>Willis has invited you out to <%= @invite.event.title %></h3>
-				<h3>Will you be there?</h3>
-				<a href=# class="btn btn-success btn-large">Yes</a>
-				<a href=# class="btn btn-danger btn-large">No</a>
-			</div>
-			<div class="span4">
-				<%= gmaps("map_options" => {"zoom" => 15, "auto_zoom" => false, "mapTypeControl" => false}, "markers" => { "data" => @json }) %>
-			</div>
-			<div class="span4">
-				<p><%= @invite.event.address %></p>
-				<p><%= @invite.event.city %>, <%= @invite.event.state %></p>
-			</div>
-		</div>
-	</div>
-</div>
-<p>
-  <b>Status:</b>
-  <%= @invite.invite_status.status %>
-</p>
-
-<div class="row">
-<p class="span4">
-  <b>Position:</b>
-  <%= @invite.position.friend.twitter_handle %>
-</p>
-</div>
-<p>
-  <b>Event:</b>
-  <%= @invite.event %>
-</p>
-
-
-<%= link_to 'Edit', edit_invite_path(@invite) %> |
-<%= link_to 'Back', invites_path %>
