@@ -4,8 +4,8 @@
 	
 	<table class="table">
 	  <tr>
-	    <th>User</th>
 	    <th>Twitter handle</th>
+	    <th></th>
 	    <th></th>
 	    <th></th>
 	    <th></th>
@@ -13,8 +13,8 @@
 	
 	<% @friends.each do |friend| %>
 	  <tr>
-	    <td><%= friend.user_id %></td>
 	    <td><%= friend.twitter_handle %></td>
+	    <td><button class=".btn">Add to queue</button></td>
 	    <td><%= link_to 'Show', friend %></td>
 	    <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
 	    <td><%= link_to 'Destroy', friend, confirm: 'Are you sure?', method: :delete %></td>

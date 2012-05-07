@@ -12,11 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :friend_id %><br />
-    <%= f.collection_select(:friend_id, :friend_id, Friend.all, :id, :twitter_handle) %>
+    <%= f.collection_select(:friend_id, "Friend", Friend.all, :id, :twitter_handle) %>
   </div>
   <div class="field">
-    <%= f.label :archive %><br />
+    <%= f.label :archive %>
     <%= f.check_box :archive %>
   </div>
   <div class="actions">
