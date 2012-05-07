@@ -50,7 +50,7 @@ class InvitesController < ApplicationController
         client = Twitter::Client.new
         content = "#{@invite.position.friend.twitter_handle} Hey there, Willis invited you to hang out. Let him know if you can come: #{url_for(@invite)}"
         client.update(content)
-        format.html { redirect_to @invite, notice: 'Invite was successfully created.' }
+        format.html { redirect_to @invite.event, notice: 'Invite was successfully created.' }
         format.json { render json: @invite, status: :created, location: @invite }
       else
         format.html { render action: "new" }
