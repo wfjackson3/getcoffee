@@ -1,0 +1,7 @@
+<div>
+<%= twitter_bootstrap_form_for friend.positions.build do |f| %>
+  <%= f.hidden_field :friend_id, :value => friend.id %>
+  <%= f.hidden_field :archive, :value => false %>
+	<%= f.submit "Add to queue", :class => "btn" %>
+<% end %>
+</div>
