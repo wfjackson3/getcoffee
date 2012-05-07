@@ -12,8 +12,20 @@
 					<p><%= @invite.event.address %></p>
 					<p><%= @invite.event.city %>, <%= @invite.event.state %></p>
 					<h3>Will you be there?</h3>
-					<a href=# class="btn btn-success btn-large">Yes</a>
-					<a href=# class="btn btn-danger btn-large">No</a>
+					<div class="row">
+						<div class="span1">
+							<%= form_for @invite, :method => :put do |f| %>
+							  <%= f.hidden_field :invite_status_id, :value => 2 %>
+							  <%= f.submit "Yes", :class => "btn btn-success btn-large" %>
+							<% end %>
+						</div>
+						<div class="span1">
+							<%= form_for @invite, :method => :put do |f| %>
+							  <%= f.hidden_field :invite_status_id, :value => 3 %>
+							  <%= f.submit "No", :class => "btn btn-danger btn-large" %>
+							<% end %>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
