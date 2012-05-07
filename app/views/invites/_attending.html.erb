@@ -1,0 +1,17 @@
+<h3>Will you be there?</h3>
+<div class="row">
+	<div class="span1">
+		<%= form_for @invite, :method => :put do |f| %>
+		  <%= f.hidden_field :invite_status_id, :value => 2 %>
+		  <%= f.submit "Yes", :class => "btn btn-success btn-large" %>
+		<% end %>
+	</div>
+	<div class="span1">
+		<%= form_for @invite, :method => :put do |f| %>
+		  <%= f.hidden_field :invite_status_id, :value => 3 %>
+		  <%= f.submit "No", :class => "btn btn-danger btn-large" %>
+		<% end %>
+	</div>
+</div>
+<%= %q(<p>You said you won't be there. Sorry you can't make it</p>).html_safe if @invite.invite_status_id==3 %>
+<%= %q(<p>You said you are coming. See you there!</p>).html_safe if @invite.invite_status_id==2 %>
