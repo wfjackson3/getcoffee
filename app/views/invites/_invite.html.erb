@@ -1,0 +1,8 @@
+<div>
+	<p>
+	<%= %q(<span class="label label-important">Declined</span>).html_safe if invite.invite_status.id==3 %>
+	<%= %q(<span class="label label-success">Accepted</span>).html_safe if invite.invite_status.id==2 %>
+	<%= %q(<span class="label label-warning">Sent</span>).html_safe if invite.invite_status.id==1 %>
+	<%= invite.position.friend.twitter_handle %>
+	</p>
+</div>

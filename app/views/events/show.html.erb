@@ -1,35 +1,27 @@
 <p id="notice"><%= notice %></p>
-<%= gmaps("map_options" => {"zoom" => 15, "auto_zoom" => false, "mapTypeControl" => false}, "markers" => { "data" => @json }) %>
-<p>
-  <b>Date:</b>
-  <%= @event.date.strftime("%A %B, %d") %> at <%= @event.date.strftime("%l:%M %P") %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @event.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @event.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @event.state %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @event.event_tag.tag %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @event.event_status.status %>
-</p>
+<div class="hero-unit">
+	<div class="row">
+		<div class="span10">
+			<h2><%= @event.title %></h2>
+			<div class="row">
+				<div class="span4">
+					<%= gmaps("map_options" => {"zoom" => 15, "auto_zoom" => false, "mapTypeControl" => false}, "markers" => { "data" => @json }) %>
+				</div>
+				<div class="span3">
+					<p><%= @event.address %></p>
+					<p><%= @event.city %>, <%= @event.state %></p>
+					<p><b>Status:</b> <%= @event.event_status.status %></p>
+					<%= link_to 'Edit', edit_event_path(@event) %> |
+					<%= link_to 'Back', events_path %>
+				</div>
+				<div class="span3">
+					<h3>Invitations</h3>
+					<%= render @event.invites %>
+					<%= link_to 'Add', new_invite_path %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
