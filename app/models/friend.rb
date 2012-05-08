@@ -17,4 +17,8 @@ class Friend < ActiveRecord::Base
   
   validates :user_id, :presence => true
   validates :twitter_handle, :presence => true, :uniqueness => {:scope => :user_id}
+  
+  def time_since
+    "#{(Time.now-self.positions.where(:archive=>true).order("updated_at").last.updated_at).to_i/60/60/24} days" unless self.positions.where(:archive=>true).order("updated_at").last.nil?
+  end
 end

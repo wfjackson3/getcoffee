@@ -2,7 +2,7 @@ class PositionsController < ApplicationController
   # GET /positions
   # GET /positions.json
   def index
-    @positions = Position.all
+    @positions = Position.where(:archive=>false)
 
     respond_to do |format|
       format.html # index.html.erb

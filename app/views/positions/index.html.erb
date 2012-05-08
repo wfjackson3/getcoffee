@@ -5,7 +5,7 @@
 	<table class="table">
 	  <tr>
 	    <th>Friend</th>
-	    <th>Archive</th>
+	    <th>Last seen</th>
 	    <th></th>
 	    <th></th>
 	    <th></th>
@@ -14,7 +14,7 @@
 	<% @positions.each do |position| %>
 	  <tr>
 	    <td><%= position.friend.twitter_handle %></td>
-	    <td><%= position.archive %></td>
+	    <td><%= position.friend.time_since unless position.friend.time_since.nil? %></td>
 	    <td><%= link_to 'Show', position %></td>
 	    <td><%= link_to 'Edit', edit_position_path(position) %></td>
 	    <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
