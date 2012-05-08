@@ -4,5 +4,16 @@
 	<%= %q(<span class="label label-success">Accepted</span>).html_safe if invite.invite_status.id==2 %>
 	<%= %q(<span class="label label-warning">Sent</span>).html_safe if invite.invite_status.id==1 %>
 	<%= invite.position.friend.twitter_handle %>
+
+			<%= form_for invite.position, :method => :put do |f| %>
+			  <%= f.hidden_field :archive, :value => true %>
+			  <%= f.submit "Yes", :class => "btn-success btn-mini" %>
+			<% end %>
+
+			<%= form_for invite, :method => :put do |f| %>
+			  <%= f.hidden_field :invite_status_id, :value => 4 %>
+			  <%= f.submit "No", :class => "btn-danger btn-mini" %>
+			<% end %>
+
 	</p>
 </div>

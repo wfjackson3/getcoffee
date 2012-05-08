@@ -1,0 +1,15 @@
+<p><b>Did the event happen?</b></p>
+<div class="row">
+	<div class="span1">
+		<%= form_for @event, :method => :put do |f| %>
+		  <%= f.hidden_field :event_status_id, :value => 2 %>
+		  <%= f.submit "Yes", :class => "btn btn-success btn-large" %>
+		<% end %>
+	</div>
+	<div class="span1">
+		<%= form_for @event, :method => :put do |f| %>
+		  <%= f.hidden_field :event_status_id, :value => 3 %>
+		  <%= f.submit "No", :class => "btn btn-danger btn-large" %>
+		<% end %>
+	</div>
+</div>

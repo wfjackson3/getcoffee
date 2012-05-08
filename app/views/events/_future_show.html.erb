@@ -1,0 +1,19 @@
+<div class="span3">
+	<p><%= @event.address %></p>
+	<p><%= @event.city %>, <%= @event.state %></p>
+	<p><b>Status:</b> <%= @event.event_status.status %></p>
+	<%= link_to 'Edit', edit_event_path(@event) %> |
+	<%= link_to 'Back', events_path %>
+</div>
+<div class="span3">
+	<h3>Invitations</h3>
+	<%= render @event.invites %>
+	<div>
+		<%= twitter_bootstrap_form_for @event.invites.build do |f| %>
+		  <%= f.hidden_field :event_id, :value => @event.id %>
+		  <%= f.hidden_field :invite_status_id, :value => 1 %>
+		  <%= select("invite", "position_id", Position.includes(:friend).collect {|p| [ p.friend.twitter_handle, p.id ] }) %>
+			<%= f.submit "Invite", :class => "btn" %>
+		<% end %>
+	</div>
+</div>

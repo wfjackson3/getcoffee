@@ -1,0 +1,10 @@
+<div class="span3">
+	<p><%= @event.address %></p>
+	<p><%= @event.city %>, <%= @event.state %></p>
+	<p><b>Status:</b> <%= @event.event_status.status %></p>
+	<%= render 'status' if @event.event_status.id == 1 %>
+</div>
+<div class="span3">
+	<h3>Who attended?</h3>
+	<%= render @event.invites %>
+</div>
