@@ -4,6 +4,7 @@
 		<%= %q(<span class="label label-success">Accepted</span>).html_safe if invite.invite_status.id==2 %>
 		<%= %q(<span class="label label-warning">Sent</span>).html_safe if invite.invite_status.id==1 %>
 		<%= invite.position.friend.twitter_handle %>
+		<% if @event.event_status_id == 2 %>
 		<div class="row">
 			<div class="span1">
 				<%= form_for invite.position, :method => :put do |f| %>
@@ -18,5 +19,6 @@
 				<% end %>
 			</div>
 		</div>
+		<% end %>
 	</p>
 </div>
