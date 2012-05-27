@@ -36,6 +36,8 @@ class Event < ActiveRecord::Base
   end
   
   def title
-    "#{self.event_tag.tag} on #{self.date.in_time_zone("Central Time (US & Canada)").strftime("%B %d at %I:%M %p")}"
+    "#{self.event_tag.tag} on #{self.date.strftime("%B %d at %I:%M %p")}"
+    # If I update this later to include time zones
+    # "#{self.event_tag.tag} on #{self.date.in_time_zone("Central Time (US & Canada)").strftime("%B %d at %I:%M %p")}"
   end
 end
