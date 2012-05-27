@@ -5,11 +5,10 @@
 	
 	<table class="table">
 	  <tr>
-	    <th>Date</th>
+	    <th></th>
 	    <th>Address</th>
 	    <th>City</th>
 	    <th>State</th>
-	    <th>Type</th>
 	    <th>Status</th>
 	    <th></th>
 	    <th></th>
@@ -18,11 +17,10 @@
 	
 	<% @events.each do |event| %>
 	  <tr>
-	    <td><%= formatted_time(event.date) %></td>
+	    <td><%= event.title %></td>
 	    <td><%= event.address %></td>
 	    <td><%= event.city %></td>
 	    <td><%= event.state %></td>
-	    <td><%= event.event_tag.tag %></td>
 	    <td><%= event.event_status.status %></td>
 	    <td><%= link_to 'Show', event %></td>
 	    <td><%= link_to 'Edit', edit_event_path(event) %></td>
