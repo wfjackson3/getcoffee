@@ -7,8 +7,8 @@
 				<div class="span4">
 					<%= gmaps("map_options" => {"zoom" => 15, "auto_zoom" => false, "mapTypeControl" => false}, "markers" => { "data" => @json }) %>
 				</div>
-				<%= render 'future_show' unless @event.date > Time.now %>
-				<%= render 'past_show' unless @event.date < Time.now %>
+				<%= render 'future_show' if @event.date > Time.now %>
+				<%= render 'past_show' if @event.date < Time.now %>
 			</div>
 		</div>
 	</div>
